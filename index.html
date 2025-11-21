@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIKI Alumni Reunion 2025 - Registration</title>
+    <meta name="description"
+        content="Register for the GIKI School & College Alumni Reunion - Alumni Students, Current Teachers, and Alumni Teachers welcome">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #a8304e 0%, #8b2d4a 100%);
+            --secondary-gradient: linear-gradient(135deg, #d4b578 0%, #c0a565 100%);
+            --accent-gradient: linear-gradient(135deg, #5a7ba8 0%, #4a6a95 100%);
+            --light-bg: #f8f6f3;
+            --card-bg: #ffffff;
+            --card-border: rgba(168, 48, 78, 0.15);
+            --text-primary: #2d3748;
+            --text-secondary: #64748b;
+            --success: #10b981;
+            --error: #ef4444;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.1);
+            --gold: #d4b578;
+            --burgundy: #a8304e;
+            --navy: #5a7ba8;
+            --cream: #faf8f5;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--light-bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(168, 48, 78, 0.03) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(212, 181, 120, 0.04) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(90, 123, 168, 0.03) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(168, 48, 78, 0.02) 0px, transparent 50%);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--burgundy) 0%, var(--gold) 50%, var(--burgundy) 100%);
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold) 0%, transparent 50%, var(--gold) 100%);
+            opacity: 0.4;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 1rem;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-md), 0 0 0 3px rgba(168, 48, 78, 0.1);
+            border: 3px solid rgba(212, 181, 120, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+        }
+
+        h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 400;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .event-badge {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.375rem 0.875rem;
+            background: linear-gradient(135deg, rgba(168, 48, 78, 0.08) 0%, rgba(212, 181, 120, 0.08) 100%);
+            border: 1px solid rgba(168, 48, 78, 0.2);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--burgundy);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .required {
+            color: var(--burgundy);
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: var(--cream);
+            border: 1.5px solid #e5e7eb;
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--burgundy);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(168, 48, 78, 0.1);
+        }
+
+        input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .radio-option {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .radio-option input[type="radio"] {
+            display: none;
+        }
+
+        .radio-label {
+            display: block;
+            padding: 1rem;
+            background: var(--cream);
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .radio-label:hover {
+            background: white;
+            border-color: var(--burgundy);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .radio-option input[type="radio"]:checked+.radio-label {
+            background: linear-gradient(135deg, rgba(168, 48, 78, 0.08) 0%, rgba(212, 181, 120, 0.08) 100%);
+            border-color: var(--burgundy);
+            box-shadow: 0 0 0 3px rgba(168, 48, 78, 0.1), var(--shadow-sm);
+        }
+
+        .radio-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .conditional-field {
+            display: none;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.125rem;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Outfit', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+            margin-top: 1rem;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .submit-btn:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .submit-btn.loading::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            top: 50%;
+            left: 50%;
+            margin-left: -8px;
+            margin-top: -8px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .credit {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .credit a {
+            background: var(--secondary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .error-message {
+            color: var(--error);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .success-message {
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #047857;
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        /* Tablet and smaller screens */
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem 1rem;
+            }
+
+            .card {
+                padding: 2rem 1.5rem;
+                border-radius: 20px;
+            }
+
+            h1 {
+                font-size: 1.875rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .logo {
+                width: 85px;
+                height: 85px;
+                margin-bottom: 1rem;
+            }
+
+            .header {
+                margin-bottom: 2rem;
+            }
+
+            .radio-option {
+                min-width: 100%;
+            }
+
+            .radio-label {
+                padding: 0.875rem;
+            }
+
+            .radio-icon {
+                font-size: 1.25rem;
+                margin-bottom: 0.375rem;
+            }
+
+            input,
+            select,
+            textarea {
+                padding: 0.75rem 0.875rem;
+                font-size: 0.9rem;
+            }
+
+            .submit-btn {
+                padding: 1rem;
+                font-size: 0.95rem;
+            }
+
+            .footer {
+                margin-top: 1.5rem;
+                padding-top: 1.5rem;
+            }
+        }
+
+        /* Mobile phones */
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+
+            .card {
+                padding: 1.5rem 1rem;
+                border-radius: 16px;
+            }
+
+            h1 {
+                font-size: 1.65rem;
+                line-height: 1.3;
+            }
+
+            .subtitle {
+                font-size: 0.85rem;
+            }
+
+            .logo {
+                width: 75px;
+                height: 75px;
+                border-radius: 16px;
+                margin-bottom: 0.875rem;
+            }
+
+            .header {
+                margin-bottom: 1.75rem;
+            }
+
+            .form-group {
+                margin-bottom: 1.25rem;
+            }
+
+            label {
+                font-size: 0.85rem;
+                margin-bottom: 0.375rem;
+            }
+
+            input,
+            select,
+            textarea {
+                padding: 0.75rem;
+                font-size: 0.875rem;
+                border-radius: 10px;
+            }
+
+            /* Make inputs easier to tap on mobile */
+            input[type="number"] {
+                padding-right: 0.5rem;
+            }
+
+            .radio-group {
+                gap: 0.75rem;
+            }
+
+            .radio-label {
+                padding: 0.75rem;
+                border-radius: 10px;
+                font-size: 0.875rem;
+            }
+
+            .radio-icon {
+                font-size: 1.125rem;
+                margin-bottom: 0.25rem;
+            }
+
+            .submit-btn {
+                padding: 0.875rem;
+                font-size: 0.9rem;
+                border-radius: 10px;
+            }
+
+            .footer {
+                margin-top: 1.25rem;
+                padding-top: 1.25rem;
+            }
+
+            .credit {
+                font-size: 0.8rem;
+            }
+
+            .success-message {
+                padding: 0.875rem;
+                font-size: 0.875rem;
+                border-radius: 10px;
+            }
+
+            .error-message {
+                font-size: 0.8rem;
+            }
+
+            .event-badge {
+                font-size: 0.7rem;
+                padding: 0.25rem 0.625rem;
+            }
+        }
+
+        /* Very small phones */
+        @media (max-width: 360px) {
+            body {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .card {
+                padding: 1.25rem 0.875rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subtitle {
+                font-size: 0.8rem;
+            }
+
+            .logo {
+                width: 68px;
+                height: 68px;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            input,
+            select,
+            textarea {
+                padding: 0.625rem 0.75rem;
+                font-size: 0.85rem;
+            }
+
+            .radio-label {
+                padding: 0.625rem;
+                font-size: 0.85rem;
+            }
+
+            .submit-btn {
+                padding: 0.75rem;
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Landscape mode optimization */
+        @media (max-height: 600px) and (orientation: landscape) {
+            body {
+                padding: 1rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .logo {
+                width: 65px;
+                height: 65px;
+                margin-bottom: 0.75rem;
+            }
+
+            .header {
+                margin-bottom: 1.25rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Improve touch targets on all mobile devices */
+        @media (hover: none) and (pointer: coarse) {
+            .radio-label {
+                min-height: 48px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .submit-btn {
+                min-height: 48px;
+            }
+
+            input,
+            select,
+            textarea {
+                min-height: 44px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <div class="logo">
+                    <img src="https://giki.edu.pk/wp-content/uploads/2022/08/giki-logo-1.png" alt="GIKI Logo"
+                        onerror="this.style.display='none'; this.parentElement.innerHTML='GIKI';">
+                </div>
+                <h1>Alumni Reunion 2025</h1>
+                <p class="subtitle">GIKI School & College</p>
+                <span class="event-badge">Registration Form</span>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                ✓ Registration submitted successfully! We look forward to seeing you at the reunion.
+            </div>
+
+            <form id="registrationForm">
+                <!-- Registration Type -->
+                <div class="form-group">
+                    <label>Registration Type <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="alumniStudent" name="registrationType" value="alumni_student"
+                                required>
+                            <label for="alumniStudent" class="radio-label">
+                                <div class="radio-icon">🎓</div>
+                                <div>Alumni Student</div>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="currentTeacher" name="registrationType" value="current_teacher">
+                            <label for="currentTeacher" class="radio-label">
+                                <div class="radio-icon">👨‍🏫</div>
+                                <div>Current Teacher</div>
+                            </label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="alumniTeacher" name="registrationType" value="alumni_teacher">
+                            <label for="alumniTeacher" class="radio-label">
+                                <div class="radio-icon">👩‍🏫</div>
+                                <div>Alumni Teacher</div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="error-message" id="typeError">Please select a registration type</div>
+                </div>
+
+                <!-- Full Name -->
+                <div class="form-group">
+                    <label for="fullName">Full Name <span class="required">*</span></label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    <div class="error-message" id="nameError">Please enter your full name</div>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    <div class="error-message" id="emailError">Please enter a valid email address</div>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="+92 300 1234567" required>
+                    <div class="error-message" id="phoneError">Please enter your phone number</div>
+                </div>
+
+                <!-- Batch Year (for alumni students) -->
+                <div class="form-group conditional-field" id="batchField">
+                    <label for="batch">Batch Year <span class="required">*</span></label>
+                    <input type="text" id="batch" name="batch" placeholder="e.g., 2024">
+                    <div class="error-message" id="batchError">Please enter your batch year</div>
+                </div>
+
+                <!-- Department (for teachers) -->
+                <div class="form-group conditional-field" id="departmentField">
+                    <label for="department">Department <span class="required">*</span></label>
+                    <input type="text" id="department" name="department" placeholder="e.g., Computer Science">
+                    <div class="error-message" id="departmentError">Please enter your department</div>
+                </div>
+
+                <!-- Years Taught (for alumni teachers) -->
+                <div class="form-group conditional-field" id="yearsField">
+                    <label for="yearsTaught">Years Taught <span class="required">*</span></label>
+                    <input type="text" id="yearsTaught" name="yearsTaught" placeholder="e.g., 2010-2020">
+                    <div class="error-message" id="yearsError">Please enter the years you taught</div>
+                </div>
+
+                <!-- Number of Guests -->
+                <div class="form-group">
+                    <label for="guests">Number of Guests (including yourself) <span class="required">*</span></label>
+                    <input type="number" id="guests" name="guests" min="1" max="5" value="1" required>
+                    <div class="error-message" id="guestsError">Please enter number of guests (1-5)</div>
+                </div>
+
+                <!-- Additional Comments -->
+                <div class="form-group">
+                    <label for="comments">Additional Comments or Special Requests</label>
+                    <textarea id="comments" name="comments" rows="4"
+                        placeholder="Any special requests or information you'd like to share..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">Complete Registration</button>
+            </form>
+
+            <div class="footer">
+                <p class="credit">Made with ❤️ by <a href="#">Muhammad Shahkaar</a> (Batch 2024)</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // IMPORTANT: Replace this URL with your Google Apps Script web app URL
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby3WkVahwAy5HHpCd-ikHs8yhVd0eGn6Y-dD41crEC9-1-2ShfZMBlAzRIgaY_yTz8j1g/exec';
+
+        const form = document.getElementById('registrationForm');
+        const registrationTypeInputs = document.querySelectorAll('input[name="registrationType"]');
+        const batchField = document.getElementById('batchField');
+        const departmentField = document.getElementById('departmentField');
+        const yearsField = document.getElementById('yearsField');
+        const successMessage = document.getElementById('successMessage');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // Handle registration type change
+        registrationTypeInputs.forEach(input => {
+            input.addEventListener('change', function () {
+                // Hide all conditional fields
+                batchField.style.display = 'none';
+                departmentField.style.display = 'none';
+                yearsField.style.display = 'none';
+
+                // Remove required attribute from all conditional fields
+                document.getElementById('batch').removeAttribute('required');
+                document.getElementById('department').removeAttribute('required');
+                document.getElementById('yearsTaught').removeAttribute('required');
+
+                // Show relevant fields based on selection
+                if (this.value === 'alumni_student') {
+                    batchField.style.display = 'block';
+                    document.getElementById('batch').setAttribute('required', '');
+                } else if (this.value === 'current_teacher') {
+                    departmentField.style.display = 'block';
+                    document.getElementById('department').setAttribute('required', '');
+                } else if (this.value === 'alumni_teacher') {
+                    departmentField.style.display = 'block';
+                    yearsField.style.display = 'block';
+                    document.getElementById('department').setAttribute('required', '');
+                    document.getElementById('yearsTaught').setAttribute('required', '');
+                }
+            });
+        });
+
+        // Form validation and submission
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            // Reset all error messages
+            document.querySelectorAll('.error-message').forEach(msg => {
+                msg.style.display = 'none';
+            });
+
+            let isValid = true;
+
+            // Validate registration type
+            const registrationType = document.querySelector('input[name="registrationType"]:checked');
+            if (!registrationType) {
+                document.getElementById('typeError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Validate full name
+            const fullName = document.getElementById('fullName').value.trim();
+            if (!fullName || fullName.length < 3) {
+                document.getElementById('nameError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Validate email
+            const email = document.getElementById('email').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Validate phone
+            const phone = document.getElementById('phone').value.trim();
+            if (!phone || phone.length < 10) {
+                document.getElementById('phoneError').style.display = 'block';
+                isValid = false;
+            }
+
+            // Validate conditional fields
+            if (registrationType) {
+                if (registrationType.value === 'alumni_student') {
+                    const batch = document.getElementById('batch').value.trim();
+                    if (!batch) {
+                        document.getElementById('batchError').style.display = 'block';
+                        isValid = false;
+                    }
+                } else if (registrationType.value === 'current_teacher') {
+                    const department = document.getElementById('department').value.trim();
+                    if (!department) {
+                        document.getElementById('departmentError').style.display = 'block';
+                        isValid = false;
+                    }
+                } else if (registrationType.value === 'alumni_teacher') {
+                    const department = document.getElementById('department').value.trim();
+                    const yearsTaught = document.getElementById('yearsTaught').value.trim();
+                    if (!department) {
+                        document.getElementById('departmentError').style.display = 'block';
+                        isValid = false;
+                    }
+                    if (!yearsTaught) {
+                        document.getElementById('yearsError').style.display = 'block';
+                        isValid = false;
+                    }
+                }
+            }
+
+            // Validate guests
+            const guests = document.getElementById('guests').value;
+            if (!guests || guests < 1 || guests > 5) {
+                document.getElementById('guestsError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Collect form data
+                const formData = {
+                    registrationType: registrationType.value,
+                    fullName: fullName,
+                    email: email,
+                    phone: phone,
+                    batch: document.getElementById('batch').value.trim(),
+                    department: document.getElementById('department').value.trim(),
+                    yearsTaught: document.getElementById('yearsTaught').value.trim(),
+                    guests: guests,
+                    comments: document.getElementById('comments').value.trim(),
+                    timestamp: new Date().toISOString()
+                };
+
+                // Show loading state
+                submitBtn.disabled = true;
+                submitBtn.classList.add('loading');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Submitting...';
+
+                try {
+                    // Send to Google Sheets via Google Apps Script
+                    const response = await fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors', // Required for Google Apps Script
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    // Note: With 'no-cors', we can't read the response, so we assume success
+                    console.log('Registration Data:', formData);
+
+                    // Show success message
+                    successMessage.style.display = 'block';
+
+                    // Scroll to top to show success message
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                    // Reset form after short delay
+                    setTimeout(() => {
+                        form.reset();
+                        batchField.style.display = 'none';
+                        departmentField.style.display = 'none';
+                        yearsField.style.display = 'none';
+
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            successMessage.style.display = 'none';
+                        }, 5000);
+                    }, 1000);
+
+                } catch (error) {
+                    console.error('Submission error:', error);
+                    alert('There was an error submitting your registration. Please try again or contact support.');
+                } finally {
+                    // Reset button state
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('loading');
+                    submitBtn.textContent = originalText;
+                }
+            } else {
+                // Scroll to first error
+                const firstError = document.querySelector('.error-message[style*="block"]');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+
+        // Real-time validation on blur
+        document.getElementById('fullName').addEventListener('blur', function () {
+            if (this.value.trim() && this.value.trim().length >= 3) {
+                document.getElementById('nameError').style.display = 'none';
+            }
+        });
+
+        document.getElementById('email').addEventListener('blur', function () {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (this.value.trim() && emailRegex.test(this.value.trim())) {
+                document.getElementById('emailError').style.display = 'none';
+            }
+        });
+
+        document.getElementById('phone').addEventListener('blur', function () {
+            if (this.value.trim() && this.value.trim().length >= 10) {
+                document.getElementById('phoneError').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
