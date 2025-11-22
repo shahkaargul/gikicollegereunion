@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIKI Alumni Reunion 2025 - Registration</title>
     <meta name="description"
-        content="Register for the GIKI School & College Alumni Reunion - Alumni Students, Current Teachers, and Alumni Teachers welcome">
+        content="Register for the GIKI School & College Alumni Reunion - Alumni Students, Current Students, Current Teachers, and Alumni Teachers welcome">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -651,6 +651,13 @@
                             </label>
                         </div>
                         <div class="radio-option">
+                            <input type="radio" id="currentStudent" name="registrationType" value="current_student">
+                            <label for="currentStudent" class="radio-label">
+                                <div class="radio-icon">📚</div>
+                                <div>Current Student</div>
+                            </label>
+                        </div>
+                        <div class="radio-option">
                             <input type="radio" id="currentTeacher" name="registrationType" value="current_teacher">
                             <label for="currentTeacher" class="radio-label">
                                 <div class="radio-icon">👨‍🏫</div>
@@ -694,6 +701,13 @@
                     <label for="batch">Batch Year <span class="required">*</span></label>
                     <input type="text" id="batch" name="batch" placeholder="e.g., 2024">
                     <div class="error-message" id="batchError">Please enter your batch year</div>
+                </div>
+
+                <!-- Current Class (for current students) -->
+                <div class="form-group conditional-field" id="classField">
+                    <label for="currentClass">Current Class <span class="required">*</span></label>
+                    <input type="text" id="currentClass" name="currentClass" placeholder="e.g., Class 10, O-Level 2">
+                    <div class="error-message" id="classError">Please enter your current class</div>
                 </div>
 
                 <!-- Department (for teachers) -->
@@ -745,16 +759,20 @@
         const successMessage = document.getElementById('successMessage');
         const submitBtn = document.getElementById('submitBtn');
 
+        const classField = document.getElementById('classField');
+
         // Handle registration type change
         registrationTypeInputs.forEach(input => {
             input.addEventListener('change', function () {
                 // Hide all conditional fields
                 batchField.style.display = 'none';
+                classField.style.display = 'none';
                 departmentField.style.display = 'none';
                 yearsField.style.display = 'none';
 
                 // Remove required attribute from all conditional fields
                 document.getElementById('batch').removeAttribute('required');
+                document.getElementById('currentClass').removeAttribute('required');
                 document.getElementById('department').removeAttribute('required');
                 document.getElementById('yearsTaught').removeAttribute('required');
 
@@ -762,6 +780,9 @@
                 if (this.value === 'alumni_student') {
                     batchField.style.display = 'block';
                     document.getElementById('batch').setAttribute('required', '');
+                } else if (this.value === 'current_student') {
+                    classField.style.display = 'block';
+                    document.getElementById('currentClass').setAttribute('required', '');
                 } else if (this.value === 'current_teacher') {
                     departmentField.style.display = 'block';
                     document.getElementById('department').setAttribute('required', '');
@@ -822,6 +843,12 @@
                         document.getElementById('batchError').style.display = 'block';
                         isValid = false;
                     }
+                } else if (registrationType.value === 'current_student') {
+                    const currentClass = document.getElementById('currentClass').value.trim();
+                    if (!currentClass) {
+                        document.getElementById('classError').style.display = 'block';
+                        isValid = false;
+                    }
                 } else if (registrationType.value === 'current_teacher') {
                     const department = document.getElementById('department').value.trim();
                     if (!department) {
@@ -857,6 +884,7 @@
                     email: email,
                     phone: phone,
                     batch: document.getElementById('batch').value.trim(),
+                    currentClass: document.getElementById('currentClass').value.trim(),
                     department: document.getElementById('department').value.trim(),
                     yearsTaught: document.getElementById('yearsTaught').value.trim(),
                     guests: guests,
@@ -894,6 +922,7 @@
                     setTimeout(() => {
                         form.reset();
                         batchField.style.display = 'none';
+                        classField.style.display = 'none';
                         departmentField.style.display = 'none';
                         yearsField.style.display = 'none';
 
